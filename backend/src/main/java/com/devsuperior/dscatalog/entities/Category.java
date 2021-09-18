@@ -20,8 +20,10 @@ public class Category implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
-	private String Name;
+	private Long id;
+	
+	@Column
+	private String name;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant createdAt;
@@ -34,24 +36,24 @@ public class Category implements Serializable {
 	}
 
 	public Category(Long id, String name) {
- 		Id = id;
-		Name = name;
+ 		this.id = id;
+		this.name = name;
 	}
 
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	
 	
@@ -74,13 +76,13 @@ public class Category implements Serializable {
 	public Instant getUpdatedAt() {
 		return updatedAt;
 	}
- 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
-		result = prime * result + ((Name == null) ? 0 : Name.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -93,19 +95,20 @@ public class Category implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Category other = (Category) obj;
-		if (Id == null) {
-			if (other.Id != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!Id.equals(other.Id))
+		} else if (!id.equals(other.id))
 			return false;
-		if (Name == null) {
-			if (other.Name != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!Name.equals(other.Name))
+		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
-
+ 
+	 
  
 	
 	
