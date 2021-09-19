@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog;
+package com.devsuperior.dscatalog.entities;
 
 import java.time.Instant;
 import java.util.HashSet;
@@ -13,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import com.devsuperior.dscatalog.entities.Category;
 
 
 @Entity
